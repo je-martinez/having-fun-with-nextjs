@@ -782,12 +782,6 @@ export const ContentLayout = () => {
             </div>
           </div>
         </div>
-
-        <div>
-          <footer>
-            <h1>Hola</h1>
-          </footer>
-        </div>
       </div>
     </>
   );

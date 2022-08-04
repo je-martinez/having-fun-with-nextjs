@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { useEffect } from "react";
-import { ContentLayout } from "./layouts/content";
-import { SidebarLayout } from "./layouts/sidebar";
+import { ContentLayout } from "../components/layout/content";
+import { SidebarLayout } from "../components/layout/sidebar";
 
 const Home: NextPage = () => {
   useEffect(() => {}, []);
@@ -18,9 +18,6 @@ const Home: NextPage = () => {
       <main>
         <SidebarLayout />
         <ContentLayout />
-        <div>
-          <h1>Hola</h1>
-        </div>
       </main>
     </div>
   );

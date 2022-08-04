@@ -8,7 +8,7 @@ export const SidebarLayout = () => {
           <div className="-mx-6 px-6 py-4">
             <a href="#" title="home">
               <img
-                src="https://tailus.io/sources/blocks/stats-cards/preview/images/logo.svg"
+                src="https://www.logodesign.net/logo/line-art-house-roof-and-buildings-4485ld.png"
                 className="w-32"
                 alt="tailus logo"
               />
@@ -17,12 +17,12 @@ export const SidebarLayout = () => {
 
           <div className="mt-8 text-center">
             <img
-              src="https://tailus.io/sources/blocks/stats-cards/preview/images/second_user.webp"
+              src="https://ayalabr.com/wp-content/uploads/2021/06/pic.png"
               alt=""
               className="w-10 h-10 m-auto rounded-full object-cover lg:w-28 lg:h-28"
             />
             <h5 className="hidden mt-4 text-xl font-semibold text-gray-600 lg:block">
-              Cynthia J. Watts
+              FirstName Lastname
             </h5>
             <span className="hidden text-gray-400 lg:block">Admin</span>
           </div>
