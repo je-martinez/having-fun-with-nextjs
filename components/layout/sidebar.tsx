@@ -1,11 +1,22 @@
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/router";
-import { IMenuItem, MenuItems } from "../../shared/constants/sidebarMenuItems";
+import {
+  getMenuItems,
+  IMenuItem,
+} from "../../shared/constants/sidebarMenuItems";
 import { useEffect } from "react";
-import { IconContext } from "react-icons";
 
 export const SidebarLayout = () => {
+  const [menuItems, setMenuItems] = useState<IMenuItem[]>([]);
+
+  useEffect(() => {
+    (async () => {
+      const menu = await getMenuItems();
+      setMenuItems(menu);
+    })();
+  }, []);
+
   return (
     <>
       <aside className="ml-[-100%] fixed z-10 top-0 pb-3 px-6 w-full flex flex-col justify-between h-screen border-r bg-white transition duration-300 md:w-4/12 lg:ml-0 lg:w-[25%] xl:w-[20%] 2xl:w-[15%]">
@@ -33,7 +44,7 @@ export const SidebarLayout = () => {
           </div>
 
           <ul className="space-y-2 tracking-wide mt-8">
-            {MenuItems.map((item, index) => (
+            {menuItems.map((item, index) => (
               <SidebarMenuItem
                 key={`menu-item-${index}`}
                 icon={item.icon}
@@ -147,11 +158,11 @@ const SidebarMenuItem = ({
                 : ""
             }`}
           >
-            <IconContext.Provider
+            {/* <IconContext.Provider
               {...(additionalProps || { value: { size: "1.5rem" } })}
             >
               <Icon />
-            </IconContext.Provider>
+            </IconContext.Provider> */}
             {/* <svg className="-ml-1 h-6 w-6" viewBox="0 0 24 24" fill="none">
               <path
                 d="M6 8a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V8ZM6 15a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-1Z"

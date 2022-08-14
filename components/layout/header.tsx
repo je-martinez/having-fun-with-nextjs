@@ -1,10 +1,20 @@
 import { IconContext } from "react-icons";
-import { BiSearchAlt } from "react-icons/bi";
-import { BsChatSquareTextFill } from "react-icons/bs";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { IoNotificationsSharp } from "react-icons/io5";
+import dynamic from "next/dynamic";
 
 export const HeaderLayout = () => {
+  const BiSearchAlt = dynamic(
+    async () => (await import("react-icons/bi")).BiSearchAlt
+  );
+  const BsChatSquareTextFill = dynamic(
+    async () => (await import("react-icons/bs")).BsChatSquareTextFill
+  );
+  const GiHamburgerMenu = dynamic(
+    async () => (await import("react-icons/gi")).GiHamburgerMenu
+  );
+  const IoNotificationsSharp = dynamic(
+    async () => (await import("react-icons/io5")).IoNotificationsSharp
+  );
+
   return (
     <>
       <div className="sticky z-10 top-0 h-16 border-b bg-white lg:py-2.5">
