@@ -7,7 +7,7 @@ import {
 } from "../../shared/constants/sidebarMenuItems";
 import { useEffect } from "react";
 
-export const SidebarLayout = () => {
+const SidebarLayout = () => {
   const [menuItems, setMenuItems] = useState<IMenuItem[]>([]);
 
   useEffect(() => {
@@ -184,3 +184,5 @@ const SidebarMenuItem = ({
     </>
   );
 };
+
+export default SidebarLayout;
